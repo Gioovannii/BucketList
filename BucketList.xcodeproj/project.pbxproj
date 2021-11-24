@@ -12,6 +12,8 @@
 		7BB6E147274DD52700F10EFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BB6E146274DD52700F10EFE /* Assets.xcassets */; };
 		7BB6E14A274DD52700F10EFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BB6E149274DD52700F10EFE /* Preview Assets.xcassets */; };
 		7BB6E152274DD5A900F10EFE /* ComparableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6E151274DD5A900F10EFE /* ComparableView.swift */; };
+		7BB6E154274DD95400F10EFE /* DocumentDirectoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6E153274DD95400F10EFE /* DocumentDirectoryView.swift */; };
+		7BB6E156274E16D700F10EFE /* enumVsStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6E155274E16D700F10EFE /* enumVsStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		7BB6E146274DD52700F10EFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BB6E149274DD52700F10EFE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7BB6E151274DD5A900F10EFE /* ComparableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableView.swift; sourceTree = "<group>"; };
+		7BB6E153274DD95400F10EFE /* DocumentDirectoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDirectoryView.swift; sourceTree = "<group>"; };
+		7BB6E155274E16D700F10EFE /* enumVsStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enumVsStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +57,8 @@
 		7BB6E141274DD52600F10EFE /* BucketList */ = {
 			isa = PBXGroup;
 			children = (
-				7BB6E150274DD56B00F10EFE /* Lecons */,
 				7BB6E142274DD52600F10EFE /* BucketListApp.swift */,
+				7BB6E150274DD56B00F10EFE /* Lecons */,
 				7BB6E144274DD52600F10EFE /* ContentView.swift */,
 				7BB6E146274DD52700F10EFE /* Assets.xcassets */,
 				7BB6E148274DD52700F10EFE /* Preview Content */,
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				7BB6E151274DD5A900F10EFE /* ComparableView.swift */,
+				7BB6E153274DD95400F10EFE /* DocumentDirectoryView.swift */,
+				7BB6E155274E16D700F10EFE /* enumVsStateView.swift */,
 			);
 			path = Lecons;
 			sourceTree = "<group>";
@@ -149,6 +155,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BB6E145274DD52600F10EFE /* ContentView.swift in Sources */,
+				7BB6E156274E16D700F10EFE /* enumVsStateView.swift in Sources */,
+				7BB6E154274DD95400F10EFE /* DocumentDirectoryView.swift in Sources */,
 				7BB6E143274DD52600F10EFE /* BucketListApp.swift in Sources */,
 				7BB6E152274DD5A900F10EFE /* ComparableView.swift in Sources */,
 			);
