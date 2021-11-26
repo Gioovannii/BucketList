@@ -14,8 +14,10 @@
 		7BB6E152274DD5A900F10EFE /* ComparableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6E151274DD5A900F10EFE /* ComparableView.swift */; };
 		7BB6E154274DD95400F10EFE /* DocumentDirectoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6E153274DD95400F10EFE /* DocumentDirectoryView.swift */; };
 		7BB6E156274E16D700F10EFE /* enumVsStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6E155274E16D700F10EFE /* enumVsStateView.swift */; };
-		7BBDA567274F1A50003B5D31 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBDA566274F1A50003B5D31 /* MapView.swift */; };
+		7BB767B327506BC6002D00CE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB767B227506BC6002D00CE /* MapView.swift */; };
+		7BBDA567274F1A50003B5D31 /* MapViewSimpleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBDA566274F1A50003B5D31 /* MapViewSimpleView.swift */; };
 		7BBDA569274F1D60003B5D31 /* MapContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBDA568274F1D60003B5D31 /* MapContentView.swift */; };
+		7BBDA56B274F2F5D003B5D31 /* FaceIDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBDA56A274F2F5D003B5D31 /* FaceIDView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +29,10 @@
 		7BB6E151274DD5A900F10EFE /* ComparableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableView.swift; sourceTree = "<group>"; };
 		7BB6E153274DD95400F10EFE /* DocumentDirectoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDirectoryView.swift; sourceTree = "<group>"; };
 		7BB6E155274E16D700F10EFE /* enumVsStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enumVsStateView.swift; sourceTree = "<group>"; };
-		7BBDA566274F1A50003B5D31 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		7BB767B227506BC6002D00CE /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		7BBDA566274F1A50003B5D31 /* MapViewSimpleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewSimpleView.swift; sourceTree = "<group>"; };
 		7BBDA568274F1D60003B5D31 /* MapContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContentView.swift; sourceTree = "<group>"; };
+		7BBDA56A274F2F5D003B5D31 /* FaceIDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +88,20 @@
 				7BB6E151274DD5A900F10EFE /* ComparableView.swift */,
 				7BB6E153274DD95400F10EFE /* DocumentDirectoryView.swift */,
 				7BB6E155274E16D700F10EFE /* enumVsStateView.swift */,
-				7BBDA566274F1A50003B5D31 /* MapView.swift */,
-				7BBDA568274F1D60003B5D31 /* MapContentView.swift */,
+				7BBDA56A274F2F5D003B5D31 /* FaceIDView.swift */,
+				7BB767B427506D6C002D00CE /* Map */,
 			);
 			path = Lecons;
+			sourceTree = "<group>";
+		};
+		7BB767B427506D6C002D00CE /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				7BBDA566274F1A50003B5D31 /* MapViewSimpleView.swift */,
+				7BB767B227506BC6002D00CE /* MapView.swift */,
+				7BBDA568274F1D60003B5D31 /* MapContentView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +176,9 @@
 			files = (
 				7BBDA569274F1D60003B5D31 /* MapContentView.swift in Sources */,
 				7BB6E145274DD52600F10EFE /* ContentView.swift in Sources */,
-				7BBDA567274F1A50003B5D31 /* MapView.swift in Sources */,
+				7BBDA56B274F2F5D003B5D31 /* FaceIDView.swift in Sources */,
+				7BBDA567274F1A50003B5D31 /* MapViewSimpleView.swift in Sources */,
+				7BB767B327506BC6002D00CE /* MapView.swift in Sources */,
 				7BB6E156274E16D700F10EFE /* enumVsStateView.swift in Sources */,
 				7BB6E154274DD95400F10EFE /* DocumentDirectoryView.swift in Sources */,
 				7BB6E143274DD52600F10EFE /* BucketListApp.swift in Sources */,
@@ -300,6 +316,7 @@
 				DEVELOPMENT_TEAM = 5K8DY798Z4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -329,6 +346,7 @@
 				DEVELOPMENT_TEAM = 5K8DY798Z4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
