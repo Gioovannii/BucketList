@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BB35E1C27546F7400D0FA96 /* MKPointAnnotation + ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB35E1B27546F7400D0FA96 /* MKPointAnnotation + ObservableObject.swift */; };
 		7BB6E143274DD52600F10EFE /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6E142274DD52600F10EFE /* BucketListApp.swift */; };
 		7BB6E145274DD52600F10EFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6E144274DD52600F10EFE /* ContentView.swift */; };
 		7BB6E147274DD52700F10EFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BB6E146274DD52700F10EFE /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7BB35E1B27546F7400D0FA96 /* MKPointAnnotation + ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation + ObservableObject.swift"; sourceTree = "<group>"; };
 		7BB6E13F274DD52600F10EFE /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB6E142274DD52600F10EFE /* BucketListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListApp.swift; sourceTree = "<group>"; };
 		7BB6E144274DD52600F10EFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				7BBDA566274F1A50003B5D31 /* MapViewSimpleView.swift */,
 				7BB767B227506BC6002D00CE /* MapView.swift */,
+				7BB35E1B27546F7400D0FA96 /* MKPointAnnotation + ObservableObject.swift */,
 				7BBDA568274F1D60003B5D31 /* MapContentView.swift */,
 			);
 			path = Map;
@@ -181,6 +184,7 @@
 				7BB767B327506BC6002D00CE /* MapView.swift in Sources */,
 				7BB6E156274E16D700F10EFE /* enumVsStateView.swift in Sources */,
 				7BB6E154274DD95400F10EFE /* DocumentDirectoryView.swift in Sources */,
+				7BB35E1C27546F7400D0FA96 /* MKPointAnnotation + ObservableObject.swift in Sources */,
 				7BB6E143274DD52600F10EFE /* BucketListApp.swift in Sources */,
 				7BB6E152274DD5A900F10EFE /* ComparableView.swift in Sources */,
 			);
