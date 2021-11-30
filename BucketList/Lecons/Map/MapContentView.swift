@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MapContentView: View {
     @State private var centerCoordinate = CLLocationCoordinate2D()
-    @State private var locations = [MKPointAnnotation]()
+    @State private var locations = [CodableMKPointAnnotation]()
     @State private var selectedPlace : MKPointAnnotation?
     @State private var showingPlaceDetails = false
     @State private var showingEditScreen = false
@@ -30,7 +30,7 @@ struct MapContentView: View {
                     Spacer()
                     Button(action:  {
                         // create a new location
-                        let newLocation = MKPointAnnotation()
+                        let newLocation = CodableMKPointAnnotation()
                         newLocation.title = "Example location"
                         newLocation.coordinate = self.centerCoordinate
                         self.locations.append(newLocation)
@@ -54,17 +54,44 @@ struct MapContentView: View {
                 self.showingEditScreen = true
             })
         }
-        .sheet(isPresented: $showingEditScreen) {
+        .sheet(isPresented: $showingEditScreen, onDismiss: saveData) {
             if self.selectedPlace != nil {
                 EditView(placemark: self.selectedPlace!)
             }
         }
+        .onAppear(perform: loadData)
+    }
+    
+    func getDocumentDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func loadData() {
+        let filename = getDocumentDirectory().appendingPathComponent("SavedPlaces")
         
-        // MARK: - Simple map
+        do {
+            let data  = try Data(contentsOf: filename)
+            locations = try JSONDecoder().decode([CodableMKPointAnnotation].self, from: data)
+        } catch {
+            print("Unable to load save data.")
+        }
+    }
+
+    func saveData() {
+        do {
+            let filename = getDocumentDirectory().appendingPathComponent("SavedPlaces")
+            let data = try JSONEncoder().encode(self.locations)
+            try data .write(to: filename, options: [.atomicWrite, .completeFileProtection])
+        } catch {
+            print("Unable to save data.")
+        }
+    }
+    
+    // MARK: - Simple map
 
 //        MapViewSimpleView()
 //            .edgesIgnoringSafeArea(.all)
-    }
 }
 
 struct MapContentView_Previews: PreviewProvider {
