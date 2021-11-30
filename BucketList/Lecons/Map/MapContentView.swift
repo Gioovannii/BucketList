@@ -4,7 +4,7 @@
 //
 //  Created by Giovanni Gaffé on 2021/11/25.
 //
-
+import LocalAuthentication
 import MapKit
 import SwiftUI
 
@@ -14,39 +14,51 @@ struct MapContentView: View {
     @State private var selectedPlace : MKPointAnnotation?
     @State private var showingPlaceDetails = false
     @State private var showingEditScreen = false
+    @State private var isUnlocked = false
     
     var body: some View {
         ZStack {
-            MapView(centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace, showingPlaceDetail: $showingPlaceDetails, annotations: locations)
-                .ignoresSafeArea()
-            Circle()
-                .fill(Color.blue)
-                .opacity(0.3)
-                .frame(width: 32, height: 32)
+            if isUnlocked {
+                MapView(centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace, showingPlaceDetail: $showingPlaceDetails, annotations: locations)
+                    .ignoresSafeArea()
+                Circle()
+                    .fill(Color.blue)
+                    .opacity(0.3)
+                    .frame(width: 32, height: 32)
 
-            VStack {
-                Spacer()
-                HStack {
+                VStack {
                     Spacer()
-                    Button(action:  {
-                        // create a new location
-                        let newLocation = CodableMKPointAnnotation()
-                        newLocation.title = "Example location"
-                        newLocation.coordinate = self.centerCoordinate
-                        self.locations.append(newLocation)
-                        
-                        self.selectedPlace = newLocation
-                        self.showingEditScreen = true
-                    }) {
-                        Image(systemName: "plus")
+                    HStack {
+                        Spacer()
+                        Button(action:  {
+                            // create a new location
+                            let newLocation = CodableMKPointAnnotation()
+                            newLocation.title = "Example location"
+                            newLocation.coordinate = self.centerCoordinate
+                            self.locations.append(newLocation)
+                            
+                            self.selectedPlace = newLocation
+                            self.showingEditScreen = true
+                        }) {
+                            Image(systemName: "plus")
+                        }
+                        .padding()
+                        .background(Color.black.opacity(0.75))
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .clipShape(Circle())
+                        .padding(.trailing)
                     }
-                    .padding()
-                    .background(Color.black.opacity(0.75))
-                    .foregroundColor(.white)
-                    .font(.title)
-                    .clipShape(Circle())
-                    .padding(.trailing)
                 }
+                    
+            } else {
+                Button("Unlock places") {
+                    self.authenticate()
+                }
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .clipShape(Capsule())
             }
         }
         .alert(isPresented: $showingPlaceDetails) {
@@ -85,6 +97,28 @@ struct MapContentView: View {
             try data .write(to: filename, options: [.atomicWrite, .completeFileProtection])
         } catch {
             print("Unable to save data.")
+        }
+    }
+    
+    func authenticate() {
+        let context = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "We need to unlock your data."
+            
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
+                DispatchQueue.main.async {
+                    if success {
+                        // Authenticated successfully
+                        self.isUnlocked = true
+                    } else {
+                        // There was a problem
+                    }
+                }
+            }
+        } else {
+            // no biometric
         }
     }
     
