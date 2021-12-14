@@ -30,7 +30,7 @@ struct enumVsStateView: View {
         case loading, success, failed
     }
     
-    var loadingState = LoadingState.loading
+    var loadingState = LoadingState.failed
     
     var body: some View {
         Group {
